@@ -1,0 +1,11 @@
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\bin\Debug\net9.0\MatrixLib.deps.json
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\bin\Debug\net9.0\MatrixLib.dll
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\bin\Debug\net9.0\MatrixLib.pdb
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\obj\Debug\net9.0\MatrixLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\obj\Debug\net9.0\MatrixLib.AssemblyInfoInputs.cache
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\obj\Debug\net9.0\MatrixLib.AssemblyInfo.cs
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\obj\Debug\net9.0\MatrixLib.csproj.CoreCompileInputs.cache
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\obj\Debug\net9.0\MatrixLib.dll
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\obj\Debug\net9.0\refint\MatrixLib.dll
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\obj\Debug\net9.0\MatrixLib.pdb
+C:\coding\learning\lab\labtest\MatrixCalculator\MatrixLib\obj\Debug\net9.0\ref\MatrixLib.dll
