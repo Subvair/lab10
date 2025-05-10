@@ -56,6 +56,46 @@ namespace MatrixCalculatorTests
       Assert.AreEqual(expectedMatrix, resultMatrix);
     }
 
+    [TestMethod]
+    public void Multiply_MatricesWithSameSize_ShouldReturnCorrectProduct()
+    {
+      double[,] dataA = {
+        { 1, 2 },
+        { 3, 4 }
+      };
+
+      double[,] dataB = {
+        { 2, 0 },
+        { 1, 2 }
+      };
+
+      double[,] expectedData = {
+        { 4, 4 },
+        { 10, 8 }
+      };
+
+      SquareMatrix matrixA = CreateMatrixWithData(2, dataA);
+      SquareMatrix matrixB = CreateMatrixWithData(2, dataB);
+      SquareMatrix expectedMatrix = CreateMatrixWithData(2, expectedData);
+
+      SquareMatrix resultMatrix = matrixA * matrixB;
+
+      Assert.AreEqual(expectedMatrix, resultMatrix);
+    }
+
+    [DataTestMethod]
+    [DataRow(1, new double[] { 5 }, 5)]
+    [DataRow(2, new double[] { 1, 2, 3, 4 }, -2)]
+    public void Determinant_ValidMatrix_ShouldReturnExpectedValue(int size, double[] flatValues, double expectedDeterminant)
+    {
+      double[,] matrixData = ConvertTo2DArray(flatValues, size);
+      SquareMatrix matrix = CreateMatrixWithData(size, matrixData);
+
+      double actualDeterminant = matrix.Determinant();
+
+      Assert.AreEqual(expectedDeterminant, actualDeterminant, 1e-10);
+    }
+
 
   }
 }
