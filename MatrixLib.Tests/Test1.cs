@@ -130,5 +130,20 @@ namespace MatrixCalculatorTests
       Assert.IsTrue(matrixB > matrixA);
     }
 
+    [TestMethod]
+    public void DeepCopy_CreatedFromMatrix_ShouldBeEqualButDifferentReference()
+    {
+      double[,] originalData = {
+        { 1, 2 },
+        { 3, 4 }
+      };
+
+      SquareMatrix originalMatrix = CreateMatrixWithData(2, originalData);
+      SquareMatrix copiedMatrix = originalMatrix.DeepCopy();
+
+      Assert.AreEqual(originalMatrix, copiedMatrix);
+      Assert.AreNotSame(originalMatrix, copiedMatrix);
+    }
+
   }
 }
