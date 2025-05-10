@@ -145,5 +145,35 @@ namespace MatrixCalculatorTests
       Assert.AreNotSame(originalMatrix, copiedMatrix);
     }
 
+    private static SquareMatrix CreateMatrixWithData(int size, double[,] matrixValues)
+    {
+      SquareMatrix matrix = (SquareMatrix)FormatterServices.GetUninitializedObject(typeof(SquareMatrix));
+
+      FieldInfo sizeField = typeof(SquareMatrix).GetField("<Size>k__BackingField", BindingFlags.NonPublic | BindingFlags.Instance);
+      FieldInfo dataField = typeof(SquareMatrix).GetField("_data", BindingFlags.NonPublic | BindingFlags.Instance);
+
+      sizeField?.SetValue(matrix, size);
+      dataField?.SetValue(matrix, matrixValues);
+
+      return matrix;
+    }
+
+    private static double[,] ConvertTo2DArray(double[] flatArray, int dimension)
+    {
+      double[,] matrix = new double[dimension, dimension];
+
+      for (int rowIndex = 0; rowIndex < dimension; rowIndex++)
+      {
+        for (int columnIndex = 0; columnIndex < dimension; columnIndex++)
+        {
+          int flatIndex = rowIndex * dimension + columnIndex;
+          matrix[rowIndex, columnIndex] = flatArray[flatIndex];
+        }
+      }
+
+      return matrix;
+    }
+
+
   }
 }
