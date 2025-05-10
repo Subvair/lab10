@@ -95,7 +95,40 @@ namespace MatrixCalculatorTests
 
       Assert.AreEqual(expectedDeterminant, actualDeterminant, 1e-10);
     }
+    [TestMethod]
+    public void Equals_IdenticalMatrices_ShouldReturnTrue()
+    {
+      double[,] matrixData = {
+        { 1, 2 },
+        { 3, 4 }
+      };
 
+      SquareMatrix matrixA = CreateMatrixWithData(2, matrixData);
+      SquareMatrix matrixB = CreateMatrixWithData(2, matrixData);
+
+      Assert.IsTrue(matrixA.Equals(matrixB));
+      Assert.IsTrue(matrixA == matrixB);
+    }
+
+    [TestMethod]
+    public void CompareTo_CompareMatricesByDeterminant_ShouldWorkCorrectly()
+    {
+      double[,] dataA = {
+        { 1, 2 },
+        { 3, 4 }
+      };
+
+      double[,] dataB = {
+        { 2, 0 },
+        { 0, 2 }
+      };
+
+      SquareMatrix matrixA = CreateMatrixWithData(2, dataA); // det = -2
+      SquareMatrix matrixB = CreateMatrixWithData(2, dataB); // det = 4
+
+      Assert.IsTrue(matrixA < matrixB);
+      Assert.IsTrue(matrixB > matrixA);
+    }
 
   }
 }
